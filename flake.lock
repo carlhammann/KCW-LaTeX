@@ -1,0 +1,93 @@
+{
+  "nodes": {
+    "courier": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1575578327,
+        "narHash": "sha256-kTGA0x5Ki44+X8oqO0mIGOU3puqQSwTAZy7PTLRcZf8=",
+        "owner": "quoteunquoteapps",
+        "repo": "CourierPrime",
+        "rev": "7fd585a2dd4c1612c79b3308e300923d1c13df93",
+        "type": "github"
+      },
+      "original": {
+        "owner": "quoteunquoteapps",
+        "repo": "CourierPrime",
+        "type": "github"
+      }
+    },
+    "crimsonpro": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661848520,
+        "narHash": "sha256-3zFB1AMcC7eNEVA2Mx1OE8rLN9zPzexZ3FtER9wH5ss=",
+        "owner": "FontHausen",
+        "repo": "CrimsonPro",
+        "rev": "24e8f7bf59ec45d77c67879ad80d97e5f94c787b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FontHausen",
+        "repo": "CrimsonPro",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "montserrat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1637318235,
+        "narHash": "sha256-rIUS7hdagUDBqwf5g+8sNl1WQ2xVzLP3Y+KB9L4BfHA=",
+        "owner": "JulietaUla",
+        "repo": "Montserrat",
+        "rev": "b54c0978c3fd840c9ccd864600608e593fffee5a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JulietaUla",
+        "repo": "Montserrat",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1673688992,
+        "narHash": "sha256-m4/90HjsHeLojLsLqwEM/qyyHTNJ+JUjhRao6fEwFuY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b4b396098c966ff5405149946930e96fa3a26c00",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "courier": "courier",
+        "crimsonpro": "crimsonpro",
+        "flake-utils": "flake-utils",
+        "montserrat": "montserrat",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

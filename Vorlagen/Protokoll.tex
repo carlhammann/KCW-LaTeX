@@ -1,0 +1,66 @@
+\documentclass[11pt]{kcw-protocol}
+
+\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+
+\title{Protokoll der Mitgliederversammlung vom 24. Dezember 1809}
+
+\versammlungsort{auf der Zugspitze}
+\versammlungsbeginn{19:00}
+\versammlungsende{19:01}
+\anwesende{sh. Liste im Anhang, etwa 7 stimmberechtigte Mitglieder}
+\versammlungsleitung{Valentin Versammlungsleiter}
+\protokoll{Peter Protokollant}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Begrüßung}
+
+\blindtext
+
+\anwesenheit{Jemand hatte keine Lust mehr, den Blindtext zu lesen. Dieses Makro
+  ist dazu da, solche An- und Abwesenheitsbemerkungen festzuhalten.}
+
+\blindtext
+
+\section{Zwei Abstimmungen}
+
+\abstimmung{Die nächste Abstimmung soll keine automatisch erzeugte Bemerkung
+  haben, ob ihr Vorschlag mit einfacher Stimmenmehrheit angenommen
+  ist.}{14}{15}{6}
+
+\abstimmungMitBemerkung{Der Vorschlag der letzten Abstimmung hätte nicht
+  umgesetzt werden dürfen.}{3}{1}{66}{Die vielen Enthaltungen zeigen, dass
+  wenige Logiker in der Versammlung sind.}
+
+\section{Ein Streitpunkt}
+
+Nach langer Diskussion entscheiden wir uns für ein Meinungsbild. Es gibt ganz
+viele verschiedene Meinungen.
+
+\meinungsbild{Was soll's zu Essen geben?}
+{Lasagne & 2 \\
+  Lasagne mit viel Käse & 14 \\
+  keine Lasagne, aber Käse & 5\\
+  Käsebrot, aber auch Lasagne & 1}
+{Das Meinungsbild bekommt eine Abschlussbemerkung, in der wir zusammenfassen,
+  was dem Vorstand hiermit aufgetragen werden soll.}
+
+\unterschriften{Walter Wichtig, Vorstandsvositzender}
+  {Wendelin Wenigerwichtig, Schriftführer}
+  {Eine zufällige Person, die nicht einmal Mitglied des Vereins ist}
+
+\appendix
+
+\section{Anwesenheitsliste}
+
+\section{Folien der Präsentation}
+
+Die kann man zum Beispiel mit \verb|pdfpages| einbinden.
+
+
+\end{document}
