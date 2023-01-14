@@ -16,6 +16,10 @@ Achtung: Beim ersten `nix ...`-Befehl wird Nix alle Abhängigkeiten
 herunterladen. Insbesondere die Schriftarten sind recht schwer, also stell' dich
 auf etwas Wartezeit ein.
 
+Im Ordner [Vorlagen/kompiliert](Vorlagen/kompiliert) kann man auch hier schon
+einmal die kompilierten Beispiele anschauen. (TODO: Das kann GitHub bestimmt
+automatisieren...)
+
 ### Neue Dokumente schreiben
 
 Mit `nix develop` betrittst du eine Entwicklungsumgebung, in der alle nötigen
