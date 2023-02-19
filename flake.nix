@@ -2,27 +2,10 @@
   nixConfig.bash-prompt-suffix = "❄ ";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
-    # fonts.url = "git+file:///home/privat/KCW-fonts"; #
     flake-utils.url = "github:numtide/flake-utils";
-    # It's probably worth noting that all three of the fonts I'm pulling here
-    # from GitHub are under the SIL Open Font License (OFL):
-    #
-    # https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
-    crimsonpro = {
-      url = "github:FontHausen/CrimsonPro";
-      flake = false;
-    };
-    montserrat = {
-      url = "github:JulietaUla/Montserrat";
-      flake = false;
-    };
-    courier = {
-      url = "github:quoteunquoteapps/CourierPrime";
-      flake = false;
-    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, crimsonpro, montserrat, courier } :
+  outputs = { self, nixpkgs, flake-utils } :
     flake-utils.lib.eachDefaultSystem (system :
        let
          pkgs = nixpkgs.legacyPackages.${system};
@@ -30,70 +13,40 @@
          texWithPackages = pkgs.texlive.combine {
            inherit (pkgs.texlive)
              scheme-basic
-             latexmk
 
-             # Here are all of the LaTex packages we're using:
-             appendix
+             # thankfully, all fonts our CI needs are already packaged for us:
+             montserrat
+             crimsonpro
+
+             # We're building our classes on Koma classes:
+             koma-script
+
+             # German language support:
              babel-german
+             hyphen-german
+
+             # All other LaTex packages we're using:
+             appendix
              blindtext
              csquotes
-             environ
+             etoolbox
              float
-             fontspec
+             fontaxes
              hyperref
-             hyphen-german
-             koma-script
+             ly1
              mdframed
+             microtype
              needspace
-             pdflscape
              pdfpages
-             pgf
-             titlesec
              xcolor
+             xkeyval
              zref
              ;
          };
 
-         crimsonproFont = pkgs.stdenvNoCC.mkDerivation {
-           name = "crimsonpro-font";
-           src = crimsonpro;
-           installPhase = ''
-             install -Dm 444 fonts/otf/*.otf -t $out/share/fonts/otf
-             install -Dm 444 fonts/ttf/*.ttf -t $out/share/fonts/ttf
-           '';
-         };
-
-         montserratFont = pkgs.stdenvNoCC.mkDerivation {
-           name = "montserrat-font";
-           src = montserrat;
-           installPhase = ''
-             install -Dm 444 fonts/otf/*.otf -t $out/share/fonts/otf
-             install -Dm 444 fonts/ttf/*.ttf -t $out/share/fonts/ttf
-           '';
-         };
-
-         courierFont = pkgs.stdenvNoCC.mkDerivation {
-           name = "courier-font";
-           src = courier;
-           installPhase = ''
-             install -Dm 444 fonts/ttf/*.ttf -t $out/share/fonts/ttf
-           '';
-         };
-
-         allFonts = [ crimsonproFont montserratFont courierFont ];
-
-         allYouNeed = [pkgs.coreutils texWithPackages] ++ allFonts;
-
-         # This line cost me more than half an hour, because Kpathsea has a very
-         # interesting syntax for paths: They are separated by semicolons, and
-         # double slahses mean that you should look into subdirectories...
-         osFontDir = pkgs.lib.concatStringsSep ";" (map (path : path + "/share/fonts//") allFonts);
+         allYouNeed = [pkgs.coreutils pkgs.latexrun texWithPackages];
 
          setTexEnvironment = ''
-           mkdir -p .cache/texmf-var
-           export TEXMFHOME=.cache;
-           export TEXMFVAR=.cache/texmf-var;
-           export OSFONTDIR="${osFontDir}";
            export TEXINPUTS="${self}/{tex,Logos}//:";
          '';
 
@@ -105,7 +58,7 @@
            phases = ["unpackPhase" "buildPhase" "installPhase"];
            buildPhase = ''
              ${setTexEnvironment}
-             latexmk -interaction=nonstopmode -pdf -lualatex Vorlagen/*.tex
+             for i in Vorlagen/*.tex; do latexrun $i; done
            '';
            installPhase = ''
              mkdir -p $out

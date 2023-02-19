@@ -25,7 +25,7 @@ automatisieren...)
 Mit `nix develop` betrittst du eine Entwicklungsumgebung, in der alle nötigen
 Werkzeuge vorhanden sind, um Kammerchor-LaTeX-Dokumente zu kompilieren.
 
-Der Befehl `latexmk -pdf -lualatex dein-tolles-dokument.tex` sollte in allen
+Der Befehl `latexrun dein-tolles-dokument.tex` sollte in allen
 Unterordnern funktionieren und `dein-tolles-dokument.pdf` erzeugen. (Du musst
 dafür insbesondere nicht die Dateien unter [tex](tex) oder [Logos](Logos) in
 deinen momentanen Arbeitsordner kopieren.)

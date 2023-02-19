@@ -1,0 +1,58 @@
+\ProvidesFile{kcw.lco}[2023/02/13 options for the scrlttr2 class]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[scaled=0.9,osf]{montserrat}
+\renewcommand{\familydefault}{\sfdefault}
+\RequirePackage{microtype}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{amsmath}
+
+\RequirePackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+\definecolor{lightblue}{rgb}{0.445,0.632,0.867}
+\definecolor{lightgray}{rgb}{0.7,0.7,0.7}
+
+\setkomavar{backaddressseparator}{~~\textbar~~}
+
+\addtoplength{firstfootvpos}{-5cm}
+
+% Define new letter header
+\setkomavar{firsthead}{
+  \null\hfill
+  % \parbox[t][\headheight][t]{4cm}{
+  \includegraphics[height=2.5cm]{kch-logo-dunkel.png}
+}
+
+% Define new letter foot
+\setkomavar{firstfoot}{
+
+  \raggedright
+  \sffamily \color{gray} \scriptsize
+  \centerline{\textbf{Kammerchor Wernigerode e.V.}}
+  \centerline{www.kammerchor-wernigerode.de}
+  \centerline{IBAN: DE05 8107 0024 0210 8587 00~~\textbar~~BIC: DEUTDEDBMAG~~\textbar~~Deutsche Bank}
+
+  \bigskip
+
+  \begin{tabular}{L{0.2\linewidth}L{0.2\linewidth}L{0.2\linewidth}L{0.2\linewidth}L{0.2\linewidth}}
+    \textbf{Vorstandsvorsitzende} & \textbf{stellvertrender Vorstandsvorsitzender} & \textbf{Verantwortliche für Konzertorganisation} & \textbf{Schriftführer} & \textbf{Chorleiter}\\
+    Stella Schröder & Loris-Matheo Apel &  Lisa-Marie Apel & Carl Hammann & Jean-Philippe Apel\\
+    Ankerstraße 3e & Krumbach 37 & Am Hopfenberg 24 & Hermann-Böse-Straße 25 & Hörder Strasse 29\\
+    06108 Halle (Salle) & 37318 Gerbershausen & 37318 Arenshausen & 28209 Bremen & 40471 Düsseldorf\\
+    +49 175 550037 & +49 151 22509260 & +49 173 7606370 & +49 151 56060728 & +49 152 27364167\\
+    % \mbox{stella.schroeder}@\mbox{kammerchor-wernigerode.de} & loris-matheo.apel@kammerchor-wernigerode.de & lisa-marie.apel@kammerchor-wernigerode.de & carl.hammann@kammerchor-wernigerode.de
+  \end{tabular}
+
+  \bigskip
+
+  \centerline{\(\left\{\begin{matrix}
+    \text{stella.schroeder} & \text{loris-matheo.apel} \\
+    \text{lisa-marie.apel} & \text{carl.hammann}\\
+    \multicolumn{2}{c}{\text{jean-philippe.apel}}
+  \end{matrix}\right\}\)@kammerchor-wernigerode.de}
+}
