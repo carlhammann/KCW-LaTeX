@@ -8,7 +8,7 @@ Verwende die Klasse `scrlttr2` und gib nach dem Laden der Klasse
 `\LoadLetterOption{kcw-brief}` an. Dafür müssen die Dateien
 [tex/kcw-brief.lco](tex/kcw-brief.lco) und
 [Logos/kch-logo-dunkel.png](Logos/kch-logo-dunkel.png) irgendwo liegen, wo LaTeX
-sie finden kann, zum Beispiel im selben Ordner wie die Quelldatei des Briefs den
+sie finden kann, zum Beispiel im selben Ordner wie die Quelldatei des Briefs, den
 du schreibst.
 
 ### Nix benutzen
