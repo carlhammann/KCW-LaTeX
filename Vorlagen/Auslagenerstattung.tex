@@ -1,0 +1,60 @@
+\documentclass{scrlttr2}
+\LoadLetterOption{kcw-brief}
+
+\usepackage[unicode]{hyperref}
+\usepackage[ngerman]{babel}
+
+\setkomavar{fromname}{\TextField[name=absender,width=8cm,charsize=8pt,value={Absender, Straße und Hausnummer, Postleitzahl und Ort}]{\mbox{}}}
+\setkomavar{date}{\TextField[name=ort,width=3cm,charsize=10pt,value=Ort]{\mbox{}} , den \TextField[name=datum,width=3cm,charsize=10pt,value=Datum]{\mbox{}}}
+\setkomavar{subject}{Abrechnung von Auslagen}
+
+
+\begin{document}
+\begin{letter}{Carl Hammann\\Hermann-Böse-Straße 25\\28290 Bremen}
+  \opening{Sehr geehrte Damen und Herren,}
+
+  \begin{Form}
+
+    die umseitigen Kosten habe ich dem Kammerchor Wernigerode e.V. ausgelegt. Ich
+    bitte um Erstattung des Gesamtbetrags auf folgendes Konto:
+
+    \begin{center}
+      \begin{tabular}{rp{0.4\linewidth}}
+        Gesamtbetrag in Euro & \TextField[name=betrag,width=\linewidth,charsize=10pt]{\mbox{}} \\
+        Kontoinhaber & \TextField[name=kontoinhaber,width=\linewidth,charsize=10pt]{\mbox{}} \\
+        IBAN & \TextField[name=iban,width=\linewidth,charsize=10pt]{\mbox{}} \\
+        BIC & \TextField[name=bic,width=\linewidth,charsize=10pt]{\mbox{}} \\
+        Kreditinstitut & \TextField[name=kreditinsitut,width=\linewidth,charsize=10pt]{\mbox{}}
+      \end{tabular}
+    \end{center}
+
+    \noindent Die entsprechenden Belege und Quittungen habe ich beigefügt.
+
+    \vspace{2\baselineskip}
+    \noindent mit freundlichen Grüßen
+
+    \vspace{\baselineskip}
+    \TextField[name=signature,width=0.4\linewidth,charsize=10pt]{\mbox{}}
+
+
+    \newpage
+    \begin{center}
+      \begin{tabular}{p{0.25\linewidth}p{0.2\linewidth}p{0.3\linewidth}}
+        Verwendungszweck&Betrag in Euro&Bemerkung\\
+        \TextField[name=zweck0,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[name=betrag0,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[multiline=true,height=3\baselineskip,name=bemerkung0,width=\linewidth,charsize=10pt]{\mbox{}}\\
+        \TextField[name=zweck1,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[name=betrag1,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[multiline=true,height=3\baselineskip,name=bemerkung1,width=\linewidth,charsize=10pt]{\mbox{}}\\
+        \TextField[name=zweck2,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[name=betrag2,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[multiline=true,height=3\baselineskip,name=bemerkung2,width=\linewidth,charsize=10pt]{\mbox{}}\\
+        \TextField[name=zweck3,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[name=betrag3,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[multiline=true,height=3\baselineskip,name=bemerkung3,width=\linewidth,charsize=10pt]{\mbox{}}\\
+        \TextField[name=zweck4,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[name=betrag4,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[multiline=true,height=3\baselineskip,name=bemerkung4,width=\linewidth,charsize=10pt]{\mbox{}}\\
+        \TextField[name=zweck5,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[name=betrag5,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[multiline=true,height=3\baselineskip,name=bemerkung5,width=\linewidth,charsize=10pt]{\mbox{}}\\
+        \TextField[name=zweck6,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[name=betrag6,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[multiline=true,height=3\baselineskip,name=bemerkung6,width=\linewidth,charsize=10pt]{\mbox{}}\\
+        \TextField[name=zweck7,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[name=betrag7,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[multiline=true,height=3\baselineskip,name=bemerkung7,width=\linewidth,charsize=10pt]{\mbox{}}\\
+        \TextField[name=zweck8,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[name=betrag8,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[multiline=true,height=3\baselineskip,name=bemerkung8,width=\linewidth,charsize=10pt]{\mbox{}}\\
+        \TextField[name=zweck9,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[name=betrag9,width=\linewidth,charsize=10pt]{\mbox{}} & \TextField[multiline=true,height=3\baselineskip,name=bemerkung9,width=\linewidth,charsize=10pt]{\mbox{}}\\
+      \end{tabular}
+    \end{center}
+
+  \end{Form}
+
+\end{letter}
+\end{document}
